@@ -3,7 +3,7 @@ import { Component, OnInit , Input, Output, HostListener, OnChanges, HostBinding
 import { CommonModule,  DatePipe } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormGroup,UntypedFormControl, FormControl, Validators, FormBuilder, FormArray} from '@angular/forms';
-
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { fnExtractParam, fnProcessScript } from "./scriptFns";
 import { classMainFile , classStructure, classDetails, classTabLevel0, classTabLevel1, classTabLevel2, classTabLevel3, classTabLevel4} from "../kiosk-abd-config/exportClassMasterCONFIG";
 import { classMainOutFile , classOutStructure, classOutDetails, classOutTabLevel0, classOutTabLevel1, classOutTabLevel2, classOutTabLevel3, classOutTabLevel4} from "../kiosk-abd-config/exportClassMasterCONFIG";
@@ -20,7 +20,9 @@ import { convertScriptToJson } from "./scriptFns"
   imports: [CommonModule, FormsModule, ReactiveFormsModule], 
 })
 export class ScriptMgtComponent {
-
+  constructor(
+    private http: HttpClient,
+) {}
   @Input() isMainJson:boolean=false;;
   @Input() afterSaveScript:any;
 
@@ -49,24 +51,43 @@ export class ScriptMgtComponent {
   nl:string="\n";
 
   ngOnInit(){
-    const classA=new classDataScript;
-    this.scriptJsonContent.push(classA);
-    this.initDataScript(this.scriptJsonContent[0]);
+    //const classA=new classDataScript;
+    //this.scriptJsonContent.push(classA);
+    //this.initDataScript(this.scriptJsonContent[0]);
 
-    this.tagFilterDisp.tagConf=this.scriptJsonContent[0].filter.tagConf;
-    this.tagFilterDisp.fieldConf[0]="";
 
-    const filterP=new classSubConf;
-    this.tagFilterDisp.subConf.push(filterP);    
-    this.tagFilterDisp.subConf[0].field[0]="";
-    this.currentScript=0;
-    this.scriptFileContent[0]="";
-    this.scriptFileName[0]="Script Guided Mode";
-    this.buildGuided();
-    this.scriptValidated[this.currentScript]=false;
-    this.modifiedScriptContent=this.scriptFileContent[0];
-    this.scriptInitialFileContent[this.currentScript]=this.scriptFileContent[this.currentScript];
-    this.scriptError="empty template";
+    this.getTemplate();
+  }
+
+  getTemplate(){
+
+    this.http.get('assets/scriptTemplate.txt' )
+      .subscribe((data:any) => {
+        
+          console.log(data);
+
+      },
+        err => {
+          this.scriptFileContent[0]=err.error.text;
+          this.scriptInitialFileContent[0]=this.scriptFileContent[0];
+          this.currentScript=0;
+          this.modifiedScriptContent=this.scriptFileContent[this.currentScript];
+          const classA=new classDataScript;
+          this.scriptJsonContent.push(classA);
+          this.initDataScript(this.scriptJsonContent[this.currentScript]);
+          this.scriptConversion();
+          this.scriptFileName[0]="scriptTemplate.txt";
+          //this.buildGuided();
+          this.scriptValidated[this.currentScript]=true;
+          this.scriptError="";
+          this.tagFilterDisp.tagConf=this.scriptJsonContent[0].filter.tagConf;
+          this.tagFilterDisp.fieldConf[0]="";
+      
+          const filterP=new classSubConf;
+          this.tagFilterDisp.subConf.push(filterP);    
+          this.tagFilterDisp.subConf[0].field[0]="";
+        //console.log("error status = " + err.status + "  error message = " + err.error.error.message);
+        });
   }
 
   initDataScript(tab:classDataScript){
