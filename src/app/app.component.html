@@ -2,19 +2,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 <body>
-<div *ngIf="isSelectABD===true">
+<h1>WELCOME - Manage your CUSS configuration file</h1>
   <div style="height:2px;"></div>
   <div style="margin-top:50px;">
     <app-kiosk-abd-config [identification]="identification"  [configServer]="configServer" 
         [devMode]="devMode"> 
     </app-kiosk-abd-config>
   </div>
-</div>
-<div *ngIf="isSelectServer===true">
-  <app-select-server>
 
-  </app-select-server>
-</div>
+
+
+  
+
 
 </body>
 
