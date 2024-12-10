@@ -1,0 +1,261 @@
+
+.blockOne{
+    display:block; border:0px solid blue; float:left; width:120px;
+    height:30px; text-align: right; padding-right:10px; padding-top:3px;
+    
+}
+
+.blockTwo{
+    display:block; border:0px solid green;  width:750px;
+    float:left;
+    min-height:22px;
+}
+
+.buttons{
+    width:100px;
+    height:40px;
+    font-size:16px;
+    margin-left:10px;
+    background-color:cyan;
+    border-radius: 5px;
+    background-image: linear-gradient(cyan, lightcyan);
+    box-shadow: 2px 2px blue;
+    border: solid 1px blue;
+    display:table-cell;
+    vertical-align:middle;
+}
+
+.buttons:hover{
+    background-color:rgb(48, 89, 159);
+    background-image: linear-gradient(rgb(97, 166, 206), rgb(63, 153, 206));
+  }
+
+.theScript{
+    font-size:14px;
+    margin-left:8px;
+    min-width:90%;
+    display:inline-block;
+    color:rgb(214, 35, 35);
+    text-align: left;;
+    
+}
+
+.even{
+    background-color:rgb(129, 160, 214);
+    
+}
+
+.odd{
+    background-color:rgb(142, 216, 183);
+}
+
+.theScript:hover{
+    background-color:rgb(9, 47, 112);
+    color:white;
+}
+
+.error{
+    width:400px;
+    display:inline-block; 
+    border:red 1px solid;
+    margin-left:25px;
+    color:red;
+    font-size:15px;
+    background-color: lightgrey;
+    }
+
+.skipLine{
+    display:inline-block;
+    width:100%;
+    margin-top:4px;
+    font-size:8px;
+}
+
+.boxGuided{
+    width:1000px;
+    border: solid 1px blue;
+    display:inline-block;
+    min-height:300px;
+    background-color: cyan;
+}
+
+.subBoxGuided{
+    width:1000px;
+    border: solid 1px green;
+    display:inline-block;
+    min-height:30px;
+    
+}
+.colorDomain{
+    background-color: rgb(8, 125, 37);
+    color:white;
+}
+.colorSelect{
+    background-color: rgb(70, 63, 126);
+    color:white;
+}
+.colorFilter{
+    background-color: rgb(178, 52, 142);
+    color:white;
+}
+.colorReplace{
+    background-color: rgb(200, 59, 59);
+    color:white;
+}
+
+.title{
+    width:100%;
+    display:inline-block;
+    font-size:14px;
+    background-color: lightblue;
+    text-align: center;
+    padding-top:5px;
+    height:18px;
+
+}
+
+.subTitle{
+width:100%; display:inline-block; font-size:12px; 
+min-height:20px; 
+border:2px red solid;
+}
+
+.subTitlePlus{
+    padding-top: 5px;
+    min-height:20px;
+    padding-left: 22px;
+}
+
+.label{
+    width:50px;
+    display:inline-block;
+    font-size: 10px;
+    margin-left:15px;
+    text-align: right;
+    padding-right:5px;  
+}
+
+
+
+.labelLong{
+    width:80px;
+    display:inline-block;
+    font-size: 10px;
+    margin-left:15px;
+    text-align: right;
+    padding-right:5px;
+    border:0px white solid;
+}
+
+.inpField{
+    width:180px;
+    color:blue;
+    display:inline-block;
+    font-size: 11px;;
+    border:none;
+    height:18px;
+}
+
+.inpColor{
+    background-color:lightblue;
+}
+
+.summary{
+    width:100%; display:inline-block; height:20px; 
+    font-size:14px; color:green;
+    
+}
+
+.action{
+    padding-left:3px;
+    width:18px;
+    height:18px;
+    display:inline-block;
+    color:black;
+    border-radius: 50%;
+    margin-left:0px;
+}
+.actionA{
+    background-color:green; 
+}
+.actionD{
+    background-color:red;
+}
+.actionDsmall{
+    padding-left:4px;
+    width:18px;
+    height:18px;
+    display:inline-block;
+    background-color:red;
+    color:black;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+    margin-left:0px;
+}
+
+.posAct{
+    text-align: right;
+    margin-top:-2px;
+    margin-left:0px;
+    font-size:11px;
+
+}
+
+.posFieldFilter{
+    margin-left:0px;
+    margin-top:0px;
+    text-align: right;
+}
+
+.actionA:hover{
+    background-color:blue;
+    color:white;
+}
+
+.actionD:hover{
+    background-color:rgb(8, 8, 140);
+    color:white;
+}
+
+.boxField{
+    margin-left:10px; display:inline-block;  
+    width:750px;
+    /*background-color: lightblue;*/
+    margin-top:2px;
+    min-height:20px;
+    border:0px solid rgb(255, 0, 64);
+}
+
+.loop{
+    float:left;
+    width:250px;
+    display:block;
+    border:0px green solid;
+    margin-top:2px;
+   
+}
+
+.posButton{
+    float:left;
+    display:block;
+}
+
+
+.evenReplace{
+    background-color: rgb(16, 127, 196);
+}
+
+.oddReplace{
+    background-color: rgb(8, 66, 102);
+}
+
+.newScript{
+    background-color: white;
+    width:600px;
+    display:inline-block;
+    margin-left:20px;
+    margin-bottom:10px;
+    padding:10px;
+
+}
